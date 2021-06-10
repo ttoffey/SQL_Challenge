@@ -30,16 +30,24 @@ Research project involving six (6) CSV files of employee-related data. Design ta
 
     6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 
-        7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+    7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
-        8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+    8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+
+
+### Analysis
+Average salary for company is $52,70.73. 
+Senior Staff and Staff have almost the same average salary - $58,000+. 
+The range for "Technique Leader" goes from the lowest salary ($40,000.00) (me) to the highest salary ($129,492.00).
+If the salaries are for real, perhaps I should stay in this position.
+
 
 ### Technologies Used
   pgAdmin 4
   PostgreSQL
-  SQLAlchemy*
-  Pandas*
-  Matplotlib*
+  SQLAlchemy
+  Pandas
+  Matplotlib
 
 ### Project Status
 Base project was completed. Issues with Bonus portion (see issues below).
@@ -49,4 +57,5 @@ Base project was completed. Issues with Bonus portion (see issues below).
 1. Issues with uploading data after importing QuickDBD into PostgreSQL.
     * Removed foreign key constraints and added constraints in after upload.
     
-2. Issues with Bonus portion.
+2. Issues with Bonus portion. Issues with Bonus portion resolved after due date. Needed a primary key for Salaries table for automap. 
+
