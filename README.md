@@ -1,30 +1,52 @@
-# SQL_Challenge
+# SQL_Challenge - Employee Database: A Mystery in Two Parts
 
-Problems
-	• Issues with uploading data after importing QuickDBD into Postgres.
-		○ DEPARTMENTS table uploaded OK but DEPT_EMP table did not; 
-		Error Message: Insert or update table "dept_emp" violates foreign key constraint "fk_dept_emp_emp_no"
-		Detail: Key (emp_no) - (10001) is not present in table EMPLOYEES. 
-		This is not correct; emp_no 10001 is present in EMPLOYEES table; EMPLOYEES table is not sorted by emp_no? 
-		
-		RESOLUTION:  Removed foreign key constraints and add in after data uploaded
+Research project involving six (6) CSV files of employee-related data. Design tables to hold the data, import the CSVs to a SQL database and answer questions listed below. (This challenge involves Data Engineering/Data Modeling and Data Analysis.)
 
+![sql.png](sql.png)
 
-After Data Upload
-ALTER TABLE "employees"
-ADD CONSTRAINT "pk_employees" PRIMARY KEY ("emp_no");
+### Objectives
+    * Create ERD (Entity Relationship Diagrams) for the tables listed below. 
+   
+      Departments - 9 departments
+      Dept_Emp - 331,603 records*
+      Dept_Manager - 24 records in total including employee_id for department and department_id for the 9 Deparments. 
+      Employees - 300,024 employee records
+      Salaries - 300,024 employee salary records
+      Titles - 7 job titles
 
-ALTER TABLE "dept_emp" 
-ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN_KEY ("emp_no")
-REFERENCES "employees" ("emp_no");
+    #### *Dept_Emp includes multiple records per employee. May be helpful to designate which department is current for employees.
 
-ALTER TABLE dept_manager ADD CONSTRAINT "fk_dept_manager_emp_no" FOREIGN KEY ("emp_no")
-REFERENCES "employees" ("emp_no");
+* Once the ERD is completed and data is uploaded, provide the following information.
 
-ALTER TABLE employees ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY ("emp_title_id")
-REFERENCES "titles" ("title_id");
+    1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 
-ALTER TABLE salaries ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY ("emp_no")
-REFERENCES employees ("emp_no");
+    2. List first name, last name, and hire date for employees who were hired in 1986.
 
-ALTER TABLE dept_emp ADD CONSTRAINT "pk_dept_emp" PRIMARY KEY (emp_no, dept_no);
+    3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
+
+    4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+
+    5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+
+    6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+
+        7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+
+        8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+
+### Technologies Used
+  pgAdmin 4
+  PostgreSQL
+  SQLAlchemy*
+  Pandas*
+  Matplotlib*
+
+### Project Status
+Base project was completed. Issues with Bonus portion (see issues below).
+
+### Issues
+
+1. Issues with uploading data after importing QuickDBD into PostgreSQL.
+    * Removed foreign key constraints and added constraints in after upload.
+    
+2. Issues with Bonus portion.
