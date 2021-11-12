@@ -59,3 +59,10 @@ Base project was completed. Issues with Bonus portion (see issues below).
     
 2. Issues with Bonus portion. Issues with Bonus portion resolved after due date. Needed a primary key for Salaries table for automap. 
 
+## References
+
+Mockaroo, LLC. (2021). Realistic Data Generator. [https://www.mockaroo.com/](https://www.mockaroo.com/)
+
+- - -
+
+© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
